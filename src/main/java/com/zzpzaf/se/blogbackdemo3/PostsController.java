@@ -95,4 +95,15 @@ public class PostsController {
         }
     }
 
+    @GetMapping(value = "/articles" + "/articleSlug/{slug}")
+    public ResponseEntity<Article> getArticleBySlug(@PathVariable String slug) {
+        Article article;
+        article = postsRepository.getArticleBySlug(slug);
+        if (article != null) {
+            return new ResponseEntity<>(article, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
 }

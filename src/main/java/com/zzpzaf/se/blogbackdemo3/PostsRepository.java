@@ -70,4 +70,18 @@ public class PostsRepository implements IPostsRepository {
         return article;
     }
 
+    @Override
+    public Article getArticleBySlug(String slug) {
+        String selQuery = "SELECT * FROM testarticles WHERE articleSlug = ?";
+        Article article = new Article();
+        try {
+            article = jdbcTemplate.queryForObject(selQuery, BeanPropertyRowMapper.newInstance(Article.class), slug);
+        } catch (Exception e) {
+            // logger.info(">===>> PostsRepository ERRORs: " + e.getMessage());
+        }
+        // logger.info(">===>> PostsRepository article: " + article.toString());
+        return article;
+    }
+
+
 }

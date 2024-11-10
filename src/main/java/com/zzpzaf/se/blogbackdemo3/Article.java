@@ -7,6 +7,7 @@ public class Article {
     private String articleTitle;
     private String articleSubTitle;
     private String articleContent;
+    private String articleSlug;
     
     public int getArticleId() {
         return articleId;
@@ -38,5 +39,18 @@ public class Article {
     public void setArticleSubTitle(String articleSubTitle) {
         this.articleSubTitle = articleSubTitle;
     }
+    public String getArticleSlug() {
+        return articleSlug;
+    }
+    public void setArticleSlug(String articleSlug) {
+        this.articleSlug = articleSlug;
+    }
+    @Override
+    public String toString() {
+        return "Article [articleId=" + articleId + ", categoryId=" + categoryId + ", articleTitle=" + articleTitle
+                + ", articleSubTitle=" + articleSubTitle + ", articleContent=" + articleContent + ", articleSlug="
+                + articleSlug + "]";
+    }
 
+    
 }

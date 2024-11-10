@@ -10,10 +10,10 @@ public interface IPostsRepository {
 
 
     List<Article> getArticles(); 
-
     List<Article> getCategoryArticles(int id); 
 
     Article getArticleById(int id);
+    Article getArticleBySlug(String slug);
 
 }
 
